@@ -196,5 +196,19 @@ nav{
 	}
 	.min_mnu_btn{
 		display: block;
-	}
+    }
+}
+/*----------------------carousel_sec----------------------*/
+.carousel_sec{
+	margin-top: 30px;
+}
+.carousel_bx{
+	width: 100%;
+	height: 300px;
+	border-radius: 10px;
+}
+.carousel_bx img{
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
 }
