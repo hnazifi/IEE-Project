@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>درمانکده</title>
+
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/doctor_page.css">
+</head>
+<body>
+
+	<!--Start header-->
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="logo_box">
+						<img src="img/logo.svg" alt="logo">
+					</div>
+				</div>
+				<div class="col-md-8">
+					<ul class="main_menu">
+						<li class="main_li">
+							<a href="speciality_list.html"><i class="fa fa-align-justify" aria-hidden="true"></i>لیست تخصص ها </a>
+							<!--Start dropdown list-->
+							<div class="inner_menu">
+								<ul>
+									<li><img src="img/kabed.svg" alt="img"><a href="doctors_list.html">گوارش، کبد و آندوسکپی</a></li>
+									<li><img src="img/kabed.svg" alt="img"><a href="#">غدد و متابولیسم</a></li>
+									<li><img src="img/biny.svg" alt="img"><a href="#">گوش، حلق وبینی</a></li>
+									<li><img src="img/magz.svg" alt="img"><a href="#">مغز و اعصاب</a></li>
+									<li><img src="img/khon.svg" alt="img"><a href="#">خون و آنکولوژی</a></li>
+									<li><img src="img/zanan.svg" alt="img"><a href="#">زنان و زایمان</a></li>
+								</ul>
+								<ul>
+									<li><img src="img/post.svg" alt="img"><a href="#">پوست و مو</a></li>
+									<li><img src="img/romatologi.svg" alt="img"><a href="#">روماتولوژی</a></li>
+									<li><img src="img/jarahi.svg" alt="img"><a href="#">جراحی مغز و اعصاب</a></li>
+									<li><img src="img/ravanshenas.svg" alt="img"><a href="#">وانپزشکی، اعصاب و روان</a></li>
+									<li><img src="img/ortopedi.svg" alt="img"><a href="#">اورتپدی</a></li>
+									<li>
+										<button type="button" class="list_btn">سایر تخصص ها <i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+									</li>							
+								</ul>
+								<div class="inner_img">
+									<img src="img/inner_ul_img.png" alt="img">
+								</div>
+							</div>
+							<!--End dropdown list-->
+						</li>
+						<li class="main_li">
+							<a href="#"><i class="fa fa-wifi" aria-hidden="true"></i>مشاوره آنلاین  </a>
+							<!--Start dropdown list-->
+							<div class="inner_menu">
+								<ul>
+									<li><img src="img/ravanshenas.svg" alt="img"><a href="#">روانشناس</a></li>
+									<li><img src="img/zanan.svg" alt="img"><a href="#">زنان، زایمان و نازایی</a></li>
+									<li><img src="img/kabed.svg" alt="img"><a href="#">غدد و متابولیسم</a></li>
+									<li><img src="img/kabed.svg" alt="img"><a href="#">گوارش، کبد و آندوسکپی</a></li>
+									<li><img src="img/kodakan.svg" alt="img"><a href="#">کودکان</a></li>
+									<li>
+										<button type="button" class="list_btn li_two">مشاهده آنلاین فوری <i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+									</li>
+								</ul>
+								<ul>
+									<li><img src="img/ravanp.svg" alt="img"><a href="#">روانپزشک(اعصاب و روان)</a></li>
+									<li><img src="img/tab.svg" alt="img"><a href="#">بیماری های عفونی و تب دار</a></li>
+									<li><img src="img/post.svg" alt="img"><a href="#">پوست و مو</a></li>
+									<li><img src="img/kolye.svg" alt="img"><a href="#">کلیه و مجاری ادراری (اورولوژی)</a></li>
+									<li><img src="img/biny.svg" alt="img"><a href="#">گوش، حلق وبینی</a></li>
+									<li>
+										<button type="button" class="list_btn li_two">مشاهده همه<i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+									</li>
+								</ul>
+
+								<div class="inner_img">
+									<img src="img/inner_ul_img.png" alt="img">
+								</div>
+							</div>
+							<!--End dropdown list-->
+						</li>
+						<li class="main_li"><a href="#"><i class="fa fa-tablet" aria-hidden="true"></i>مجله پزشکی  </a></li>
+						<li class="main_li"><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>عضویت پزشکان  </a></li>
+						<li class="main_li"><a href="#"><i class="fa fa-cube" aria-hidden="true"></i>کرونا سازمانی  </a></li>
+					</ul>
+					<div class="min_box">
+						<a href="#" class="min_mnu_btn"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
+						<div class="min_menu">
+							<ul>
+								<li><a href="#">لیست تخصص ها </a></li>
+								<li><a href="#">مشاوره آنلاین  </a></li>
+								<li><a href="#">مجله پزشکی  </a></li>
+								<li><a href="#">عضویت پزشکان  </a></li>
+								<li><a href="#">کرونا سازمانی  </a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="log_btn">
+						<a href="login.html">ورود  <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--End header-->
+
+	<!-- start navbar-->
+	<section class="navbar_sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<a href="index.html">درمانکده</a>
+					<i class="fa fa-chevron-left" aria-hidden="true"></i>
+					<a href="index.html">متخصص داخلی </a>
+					<i class="fa fa-chevron-left" aria-hidden="true"></i>
+					<span> متخصص داخلی
+						آقای دکتر حمید صالحیار</span>
+				</div>
+			</div>	
+		</div>
+	</section>
+	<!-- End navbar-->
+
+	<!--start doctor_section-->
+	<section class="doctor_sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="doctor_info">
+						<div class="dctr_img_bx">
+							<img src="img/dctr_img1.jpeg" alt="img">
+						</div>
+						<h5>حمید صالحیار</h5>
+						<h6>فوق تخصص گوارش، کبد و آندوسکوپی</h6>
+						<p>شماره نظام پزشکی : 1818</p>
+						<div class="info_box">
+							<ul>
+								<li>
+									<i class="fa fa-book" aria-hidden="true"></i>
+									<p>تجربه</p>
+									<span>52سال</span>
+								</li>
+								<li>
+									<i class="fa fa-clock-o" aria-hidden="true"></i>
+									<p>اولین نوبت آزاد </p>
+									<span>1 دی</span>
+								</li>
+								<li>
+									<i class="fa fa-window-maximize" aria-hidden="true"></i>
+									<p>پرداخت آنلاین</p>
+									<span>دارد</span>
+								</li>
+							</ul>
+						</div>
+						<span class="like_heart"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+						<span class="share_icn"><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="round_box">
+						<div class="round_head">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-9">
+										<div class="walk_img">
+											<i class="fa fa-blind" aria-hidden="true"></i>
+										</div>
+										<div class="round_hd_txt">
+											<h4>رزرو نوبت مراجعه حضوری</h4>
+											<h6>لطفا روز و ساعت دلخواه برای مراجعه به مطب را انتخاب کنید.</h6>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<button>
+											مطب چهارراه پونک
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="round_bdy">
+							<ul>
+								<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+								<li class="li_frst_chld">
+									<h6>دوشنبه</h6>
+									<span>1</span>
+									<p>دی</p>
+								</li>
+								<li>
+									<h6>یکشنبه</h6>
+									<span>2</span>
+									<p>دی</p>
+								</li>
+								<li class="li_thrd_chld">
+									<h6>شنبه</h6>
+									<span>3</span>
+									<p>دی</p>
+								</li>
+								<li>
+									<h6>جمعه</h6>
+									<span>4</span>
+									<p>دی</p>
+								</li>
+								<li>
+									<h6>پنجشنبه</h6>
+									<span>5</span>
+									<p>دی</p>
+								</li>
+								<li>
+									<h6>چهارشنبه</h6>
+									<span>6</span>
+									<p>دی</p>
+								</li>
+								<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+							</ul>
+						</div>
+						<div class="round_ftr">
+							<p>
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+								ساعت های نوبت دوشنبه 1 دی 
+							</p>
+							<span class="gray_bx">17:00</span>
+							<span class="gray_bx">17:10</span>
+							<span class="gray_bx">17:20</span>
+							<span class="orng_bx">17:30</span>
+							<span class="orng_bx">17:40</span>
+							<span class="orng_bx">17:50</span>
+							<span class="gray_bx">18:00</span>
+							<span class="orng_bx">18:10</span>
+							<span class="orng_bx">18:20</span>
+							<span class="orng_bx">18:40</span>
+							<span class="orng_bx">18:50</span>
+						</div>
+					</div>
+
+					<div class="top_cmnt">
+						<div class="grant_bx">
+							<h4>4.5</h4>
+							<ul>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							</ul>
+							<p>از 35 نظر </p>
+						</div>
+						<div class="cmnt_side">
+							<span><i class="fa fa-comment-o" aria-hidden="true"></i>  نظر حدیقه:</span>
+							<p>با توجه به معاینه هایی که انجام دادن و داروهایی که دادن تا به الان که راضی ام و باید ازمایشاتم و ببرم بازهم براشون تا ادامه روند درمان و پیگیری کنیم . </p>
+						</div>
+					</div>
+					<div class="adres_map">
+						<div class="map_header">
+							<button class="actv"><i class="fa fa-map-o" aria-hidden="true"></i>  اطلاعات مطب</button>
+							<button class="non_actv"><i class="fa fa-calendar-o" aria-hidden="true"></i>  روزهای حضور</button>
+						</div>
+						<div class="map_bdy">
+							<div class="container">
+								<div class="row">
+									<div class="col-xl-5 col-lg-6">
+										<div class="map_img">
+											<img src="img/map_image.png" alt="map">
+										</div>
+									</div>
+									<div class="col-xl-7 col-lg-6">
+										<div class="adrs_bx">
+											<h6>آدرس مطب 1 :</h6>
+											<p>خیابان پاسداران، ابتدای بوستان نهم، ساختمان مهر، پلاک 133، طبقه 1، واحد3 </p>
+											<span>تلفن گویا : <a href="#">02162743344</a></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="user_cmnts">
+						<div class="user_cmnts_hed">
+							<h5><i class="fa fa-comment-o" aria-hidden="true"></i>  نظرات کاربران (تعداد کل نظرات :35) </h5>
+							<p>در این قسمت شما می توانید تجربه مراجعه کاربران دیگر به مطب آقای دکتر جواد رستگارمقدم را بخوانید. </p>
+						</div>
+						<div class="user_cmnts_bdy">
+							<div class="container">
+								<div class="row">
+									<div class="col-xl-6 col-12">
+										<div class="doctr_point">
+											<h5><i class="fa fa-star-o" aria-hidden="true"></i>  امتیاز به پزشک </h5>
+											<ul>
+												<li>
+													<p>5 ستاره</p>
+													<div class="progres1"></div>
+													<span>21</span>
+												</li>
+												<li>
+													<p>4 ستاره</p>
+													<div class="progres2"></div>
+													<span>11</span>
+												</li>
+												<li>
+													<p>3 ستاره</p>
+													<div class="progres3"></div>
+													<span>3</span>
+												</li>
+												<li>
+													<p>2 ستاره</p>
+													<div class="progres4"></div>
+													<span>0</span>
+												</li>
+												<li>
+													<p>1 ستاره</p>
+													<div class="progres5"></div>
+													<span>0</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-xl-6 col-12">
+										<div class="visit_time">
+											<h5>
+												<i class="fa fa-clock-o" aria-hidden="true"></i>
+												میانگین زمان انتظار برای ویزیت  
+											</h5>
+											<p>45 دقیقه </p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="dctr_lst_hed">
+											<p><i class="fa fa-outdent" aria-hidden="true"></i> مرتب سازی براساس :</p>
+											<ul>
+												<li><a href="#">جدیدترین</a></li>
+												<li><a href="#">بیشترین امتیاز</a></li>
+												<li><a href="#">مفیدترین نظرات</a></li>
+											</ul>
+										</div>
+										<div class="user_cmnt_bx">
+											<div class="cmnt_bx_hed">
+												<i class="fa fa-user-o" aria-hidden="true"></i>
+												<p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+												<span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+												<br>2</span>
+											</div>
+											<div class="cmnt_bx_bdy">
+												<ul>
+													<li class="cmnt_bdy_li">
+														<h5>علت مراجعه</h5>
+														<h5>امتیاز به پزشک</h5>
+													</li>
+													<li class="cmnt_bdy_li li_center">
+														<span>پیگیری روند درمان</span>
+														<ul class="cmnt_star">
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+														</ul>
+													</li>
+													<li class="cmnt_bdy_li3">
+														<p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="user_cmnt_bx">
+											<div class="cmnt_bx_hed">
+												<i class="fa fa-user-o" aria-hidden="true"></i>
+												<p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+												<span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+												<br>2</span>
+											</div>
+											<div class="cmnt_bx_bdy">
+												<ul>
+													<li class="cmnt_bdy_li">
+														<h5>علت مراجعه</h5>
+														<h5>امتیاز به پزشک</h5>
+													</li>
+													<li class="cmnt_bdy_li li_center">
+														<span>پیگیری روند درمان</span>
+														<ul class="cmnt_star">
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+														</ul>
+													</li>
+													<li class="cmnt_bdy_li3">
+														<p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="user_cmnt_bx">
+											<div class="cmnt_bx_hed">
+												<i class="fa fa-user-o" aria-hidden="true"></i>
+												<p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+												<span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+												<br>2</span>
+											</div>
+											<div class="cmnt_bx_bdy">
+												<ul>
+													<li class="cmnt_bdy_li">
+														<h5>علت مراجعه</h5>
+														<h5>امتیاز به پزشک</h5>
+													</li>
+													<li class="cmnt_bdy_li li_center">
+														<span>پیگیری روند درمان</span>
+														<ul class="cmnt_star">
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+														</ul>
+													</li>
+													<li class="cmnt_bdy_li3">
+														<p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="user_cmnt_bx">
+											<div class="cmnt_bx_hed">
+												<i class="fa fa-user-o" aria-hidden="true"></i>
+												<p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+												<span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+												<br>2</span>
+											</div>
+											<div class="cmnt_bx_bdy">
+												<ul>
+													<li class="cmnt_bdy_li">
+														<h5>علت مراجعه</h5>
+														<h5>امتیاز به پزشک</h5>
+													</li>
+													<li class="cmnt_bdy_li li_center">
+														<span>پیگیری روند درمان</span>
+														<ul class="cmnt_star">
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+														</ul>
+													</li>
+													<li class="cmnt_bdy_li3">
+														<p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="user_cmnt_bx">
+											<div class="cmnt_bx_hed">
+												<i class="fa fa-user-o" aria-hidden="true"></i>
+												<p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+												<span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+													<br>2</span>
+											</div>
+											<div class="cmnt_bx_bdy">
+												<ul>
+													<li class="cmnt_bdy_li">
+														<h5>علت مراجعه</h5>
+														<h5>امتیاز به پزشک</h5>
+													</li>
+													<li class="cmnt_bdy_li li_center">
+														<span>پیگیری روند درمان</span>
+														<ul class="cmnt_star">
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															<li><i class="fa fa-star" aria-hidden="true"></i></li>
+														</ul>
+													</li>
+													<li class="cmnt_bdy_li3">
+														<p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End doctor_section-->
+
+
+	<!--start corona section-->
+	<section class="corona_sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h5>نگران کرونا نباشید</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="offset-md-2"></div>
+				<div class="col-md-4">
+					<div class="crna_card">
+						<a href="#">
+							<div class="crna_img_bx">
+								<img src="img/corona_img2.png" alt="img">
+							</div>
+							<h6>
+			                   تست PCR و آنتی بادی در محل
+			                </h6>
+							<p>
+			                    اگر در شهرهای تهران، مشهد، اصفهان، کرج، شیراز و اهواز هستید، می‌توانید بدون مراجعه به آزمایشگاه و در محل مدنظر خود آزمایش کرونا بدهید.
+							</p>
+							<button>درخواست آزمایش   <i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 offset-md-2">
+					<div class="crna_card">
+						<a href="#">
+							<div class="crna_img_bx">
+								<img src="img/corona_img1.png" alt="img">
+							</div>
+							<h6>
+			                    مشاوره آنلاین فوری
+			                </h6>
+			                <p>                	
+			                        با تست آنلاین کرونا علائم خود را بررسی کنید و اگر مشکوک بودید میتوانید به صورت فوری با پزشکان عمومی مشاوره آنلاین داشته باشید.
+			                </p>
+			                <button>
+			                	دریافت مشاوره فوری
+			                	<i class="fa fa-chevron-left" aria-hidden="true"></i>
+			                </button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End corona section-->
+
+	<!-- start app_sec-->
+	<section class="app_sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="app_right">
+						<div class="app_img">
+							<img src="img/app_img.png" alt="img">
+						</div>
+						<div class="app_store">
+							<ul>
+								<li><img src="img/google.png" alt="img"></li>
+								<li><img src="img/apple.png" alt="img"></li>
+								<li><img src="img/bazar.png" alt="img"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="app_left">
+						<div class="left_cntnt">
+							<h5>دانلود اپلیکیشن درمانکده </h5>
+							<p>با اپلیکیشن درمانکده با پزشکان و روانشناسان آنلاین مشاوره کنید یا برای ویزیت حضوری آنلاین نوبت بگیرید. </p>
+							<h6>برای دریافت لینک دانلود، شماره موبایل خود را وارد کنید. </h6>
+							<div class="app_inpt_bx">
+								<input type="text" placeholder="مانند  09012345678">
+								<div class="sub_box"><button type="submit">  ارسال لینک</button></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End app_sec-->
+
+	<!--start about_speciality -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="foter_logo">
+						<div>
+							<img src="img/login_logo.svg" alt="img">
+						</div>
+						<p>
+							درمانکده، ارائه دهنده خدمات آنلاین سلامت (نوبت گیری اینترنتی، مشاوره آنلاین، آزمایش در محل و ...)
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="ftr_list_bx">
+						<ul class="foter_list">
+							<li><a href="#">درباره درمانکده </a></li>
+							<li><a href="#">تماس با ما </a></li>
+							<li><a href="#">مجله پزشکی</a></li>
+						</ul>
+						<ul class="foter_list">
+							<li><a href="#">سوالات متداول </a></li>
+							<li><a href="#">قوانین و مقررات </a></li>
+							<li><a href="#">شکایت </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="namads">
+						<div><img src="img/nashan.jpg" alt="img"></div>
+						<div><img src="img/enamad.jpg" alt="img"></div>
+					</div>
+					<div class="icn_list">
+						<ul>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--End footer-->
+
+
+</body>
+</html>
