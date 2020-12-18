@@ -198,6 +198,40 @@ header{
 		display: block;
 	}
 }
+/*-----------------------------navbar_sec-------------------------*/
+.navbar_sec{
+	text-align: right;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.navbar_sec a ,
+.navbar_sec i{
+	color: #1780DF;
+	font-size: 14px;
+}
+.navbar_sec i{
+	vertical-align: middle;
+}
+.navbar_sec span{
+	color: #6e7794;
+	font-size: 14px;
+}
+
+.nav_explan{
+	background-color: #1780DF;
+	color: #fff;
+	text-align: right;
+	border-radius: 10px;
+	padding: 1rem;
+	margin-top: 38px;
+}
+.nav_explan h1{
+	font-size: 28px;
+}
+.nav_explan p{
+	font-size: 14px;
+	margin-top: 1.5rem;
+}
 
 
 
