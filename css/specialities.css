@@ -340,3 +340,102 @@ nav{
 .spclt_mnu_ftr a{
 	color: #1780DF;
 }
+.card_bx{
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 1rem;
+	border: 1px solid #e2e8f0;
+	min-height: 270px;
+	margin-bottom: 15px;
+}
+.card_bx:hover {
+    border: 1px solid #fb815e;
+}
+.card_hdr{
+	text-align: right;
+}
+.crd_img , .crd_title{
+	display: inline-block;
+}
+.crd_img{
+	width: 57px;
+	height: 57px;
+}
+.crd_img img{
+	width: 100%;
+	height: 100%;
+}
+.crd_title h4{
+	line-height: 30px;
+	font-size: 17px;
+	color: #3b4157;
+	font-weight: 700;
+	padding-right: 1rem;
+}
+.card_bdy{
+	color: #6e7794;
+	text-align: justify;
+	line-height: 26px;
+	font-size: 12px;
+	margin-top: 18px;
+	margin-bottom: 35px;
+}
+.card_foter .doctors_img ,
+.card_foter button{
+	display: inline-block;
+	width: 48%;
+}
+.doctors_img{
+	position: relative;
+	text-align: right;
+	height: 45px;
+	float: right;
+}
+.doctors_img img{
+	width: 30px;
+	height: 30px !important;
+	border-radius: 50%;
+}
+.doctors_img img:nth-child(1){
+	position: absolute;
+	right: 0px;
+}
+.doctors_img img:nth-child(2){
+	position: absolute;
+	right: 18px;
+}
+.doctors_img img:nth-child(3){
+	position: absolute;
+	right: 40px;
+}
+.doctors_img span{
+	position: absolute;
+	top: 32px;
+	right: 7px;
+	font-size: 9px;
+	color: #6e7794;
+}
+.card_foter button{
+	border: 2px solid #fb815e;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #fb815e;
+	background-color: #fff;
+	padding: .6rem .75rem;
+	cursor: pointer;
+}
+.card_foter button:hover{
+	background-color: #fb815e;
+	color: #fff;
+}
+.card_foter button i{
+	vertical-align: middle;
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+	.crd_title h4{
+		font-size: 15px;
+		padding-right: 0;
+	}
+}
