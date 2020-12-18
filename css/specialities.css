@@ -1,20 +1,26 @@
-/*-------------------------header-----------------------*/
+
+/*---------------------------header----------------------------*/
 header{
-    min-height: 75px;
-    background-color: white;
+	background-color: #fff;
+	min-height: 75px;
+	padding-top: 5px;
 }
-nav{
-	position: relative;
+.inner_img , .inner_menu ul{
+	width: 32%;
 }
-.logo_box , 
-.main_menu , 
-.log_btn{
-	display: inline-block;
+.inner_menu ul , .min_menu ul{
+	text-align: right;
+}
+.main_menu{
+	list-style: none;
+	padding: 25px 10px 15px 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 100%;
+	text-align: right;
 }
 .logo_box{
 	position: absolute;
-	right: 5%;
-	top: 0;
 	width: 128px;
 	height: 56px;
 }
@@ -23,9 +29,7 @@ nav{
 	height: auto;
 }
 .log_btn{
-	position: absolute;
-	left: 5%;
-	top: 22px;
+	padding-top: 15px;
 }
 .log_btn a{
 	background-color: #ededed;
@@ -36,14 +40,6 @@ nav{
 }
 .log_btn a i{
 	vertical-align: middle;
-}
-.main_menu{
-	list-style: none;
-	padding: 25px 10px 15px 10px;
-	margin-top: 0;
-	margin-bottom: 0;
-	position: absolute;
-	right: 220px;
 }
 .main_li{
 	display: inline-block;
@@ -143,7 +139,7 @@ nav{
 .min_box{
 	position: absolute;
 	top: 15px;
-	right: 200px;
+	right: 35px;
 }
 .min_menu{
 	position: absolute;
@@ -185,6 +181,11 @@ nav{
 .min_box:hover > .min_menu{
 	display: block !important;
 }
+@media (max-width: 370px) {
+	.min_menu{
+		width: 150px;
+	}
+}
 @media (max-width: 560px){
 	.min_box{
 		right: 162px;
@@ -196,8 +197,9 @@ nav{
 	}
 	.min_mnu_btn{
 		display: block;
-    }
+	}
 }
+/*----------------------carousel_sec----------------------*/
 .carousel_sec{
 	margin-top: 30px;
 }
@@ -211,6 +213,7 @@ nav{
 	height: auto;
 	border-radius: 10px;
 }
+/*----------------------specialitys_sec--------------------*/
 .specialitys_sec{
 	margin-bottom: 30px;
 }
@@ -300,7 +303,6 @@ nav{
 .mnu_srch_bx button i{
 	font-size: 16px;
 }
-
 .spclt_mnu_body span{
 	background-color: #e5f2fe;
 	border-radius: 5px;
@@ -339,6 +341,7 @@ nav{
 .spclt_mnu_ftr a{
 	color: #1780DF;
 }
+/************************cards*****************/
 .card_bx{
 	background-color: #fff;
 	border-radius: 10px;
@@ -438,6 +441,8 @@ nav{
 		padding-right: 0;
 	}
 }
+
+/*------------------------footer------------------------*/
 footer{
 	background-color: #1780DF;
 	color: #fff;
