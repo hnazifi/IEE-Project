@@ -1,0 +1,159 @@
+
+
+/*-----------------------------log_form----------------------*/
+body , .log_page{
+	margin: 0;
+	padding: 0;
+}
+.log_page{
+	position: relative;
+}
+.side_box , 
+.log_box{
+	display: inline-block;
+}
+.side_box{
+	background-color: #1780df;
+	color: #fff;
+	min-height: 100vh;
+	width: 33%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	text-align: center;
+	padding-top: 15%;
+}
+.side_box div , .side_box h2 , .side_box h4{
+	display: block;
+}
+.side_box h2{
+	font-weight: 700;
+	margin-top: 20px;
+	line-height: 1.2;
+}
+.side_box h4{
+	margin-top: 3rem;
+	margin-bottom: .5rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+.log_img_box{
+	width: 213px;
+	height: 92px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+.log_img_box img{
+	width: 100%;
+	height: auto;
+}
+.log_box{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 66%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 12%;
+}
+.log_box h4{
+	color: #3b4157;
+	font-weight: 700;
+	margin-bottom: 3rem;
+}
+form{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	box-sizing: border-box;
+}
+.input_lable{
+	position: relative;
+	width: 100%;
+}
+.input_lable label{
+	position: absolute;
+	right: 1rem;
+	top: -25%;
+	font-weight: 700;
+	z-index: 5;
+	color: #6e7794;
+	background: linear-gradient(180deg,#fafafa,#fafafa 50%,#fff 70%);
+	-webkit-transition: all .2s;
+	transition: all .2s;
+	opacity: 1;
+	font-size: 14px;
+	padding: 0 .5rem;
+	width: auto;
+}
+.input_box{
+	position: relative;
+	width: 100%;
+}
+#phone_num{
+	padding: 12px 10px;
+	border: 2px solid #cdcdcd;
+	position: relative;
+	width: 100%;
+	border-radius: 5px;
+	margin: 0;
+	color: #6e7794;
+	text-align: right;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	box-sizing: border-box;
+}
+#phone_num:focus{
+	border: 2px solid #1780df;
+}
+button{
+	cursor: pointer;
+	outline: none;
+	border-radius: 10px;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+button[type='submit']{
+	background: #fb815e;
+	color: #fff;
+	box-shadow: none;
+	width: 100%;
+	border: none;
+	padding: 16px;
+	margin-top: 1.5rem;
+	text-align: center;
+}
+button[type='button']{
+	background-color: #fff;
+	margin-right: 0;
+	margin-left: 0;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: #fb815e;
+	border: 1px solid #fb815e;
+}
+button[type="button"]:hover{
+	background-color: #fb815e;
+	color: #fff;
+}
+
+@media (max-width: 560px){
+	form{
+		width: 100%;
+		padding-right: 5%;
+		padding-left: 5%;
+	}
+}
+@media (max-width: 767px){
+	.side_box{
+		display: none;
+	}
+	.log_box{
+		width: 100%;
+	}
+}
