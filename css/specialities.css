@@ -212,3 +212,131 @@ nav{
 	height: auto;
 	border-radius: 10px;
 }
+.specialitys_sec{
+	margin-bottom: 30px;
+}
+.specialitys_sec .col-md-9{
+	padding-right: 0;
+	padding-left: 0;
+}
+.specialitys_mnu{
+	width: 100%;
+	border: 1px solid rgba(0,0,0,.125);
+	border-radius: 10px;
+	background-color: #fff;
+	color: #6e7794;
+	margin-bottom: 20px;
+}
+.spclt_mnu_head{
+	text-align: right;
+	padding: 15px 0;
+	border-bottom: 1px solid #dee2e6 !important;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+.spclt_mnu_head h5 , 
+.spclt_mnu_head span , 
+.spclt_mnu_head i{
+	display: inline-block;
+}
+.spclt_mnu_head h5{
+	font-size: 16px;
+	font-weight: 700;
+}
+.spclt_mnu_head i{
+	font-size: 18px;
+	vertical-align: middle;
+}
+.spclt_mnu_head i , 
+.spclt_mnu_head h5{
+	color: #3b4157;
+	padding-left: 2px;
+}
+.spclt_mnu_head span{
+	color: #6e7794;
+	font-size: 11px;
+}
+.spclt_mnu_body{
+	text-align: right;
+	height: 600px;
+	overflow-y: scroll;
+}
+.mnu_srch_bx{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	direction: rtl;
+	width: 92%;
+	overflow: hidden;
+	border: 1px solid rgba(0,0,0,.125);
+	border-radius: 5px;
+	background-color: #fafafa;
+	margin-left: auto;
+	margin-right: auto;
+}
+.mnu_srch_bx input[type=text] {
+	padding: 8px 2px 4px 2px;
+	font-size: 11px;
+	border: none;
+	width: 90%;
+	border-radius: 20px;
+	background-color: #fafafa;
+}
+.mnu_srch_bx input[type=text]:focus{
+	box-shadow: none;
+	border: none;
+	outline: none;
+}
+.mnu_srch_bx button{
+	width: 10%;
+	float: right;
+	padding: 6px 5px;
+	text-align: left;
+	background: #fafafa;
+	border: none;
+	cursor: pointer;
+	color: #a0a0a0;
+	border-radius: 20px;
+}
+.mnu_srch_bx button i{
+	font-size: 16px;
+}
+
+.spclt_mnu_body span{
+	background-color: #e5f2fe;
+	border-radius: 5px;
+	color: #3b4157;
+	padding: .25rem  1rem;
+	margin-right: 15px;
+}
+.spclt_mnu_body ul{
+	list-style: none;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding-right: 18px;
+}
+.spclt_mnu_body li{
+	padding-bottom: .5rem;
+}
+.spclt_mnu_body ul a:hover{
+	color: #1780DF;
+	border-bottom: 1px dashed gray;
+}
+.spclt_mnu_body ul a{
+	font-size: 14px;
+	color: #6e7794;
+	padding-bottom: 6px;
+}
+
+.spclt_mnu_ftr{
+	width: 100%;
+	background-color: #F0F7FD;
+	text-align: center;
+	margin-top: 15px;
+	padding-top: 11px;
+	padding-bottom: 7px;
+	border-radius: 0 0 10px 10px;
+}
+.spclt_mnu_ftr a{
+	color: #1780DF;
+}
