@@ -16,6 +16,7 @@ import {SpecialitiesComponent} from './specialities/specialities.component';
 import {CarouselComponent} from './specialities/carousel/carousel.component';
 import {FooterComponent} from './footer/footer.component';
 import {DoctorsListComponent} from './doctors-list/doctors-list.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 // Angular application routing:
@@ -51,6 +52,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
