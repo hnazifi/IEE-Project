@@ -11,8 +11,13 @@ export class DoctorsListComponent implements OnInit {
   constructor(public doctorsService: DoctorsService) {
   }
 
+  doctors;
+
   ngOnInit(): void {
-    this.doctorsService.getDoctors().subscribe(res => console.log(res));
+    this.doctorsService.getDoctors().subscribe(res => {
+      this.doctors = res;
+      console.log(this.doctors);
+    });
   }
 
 }
