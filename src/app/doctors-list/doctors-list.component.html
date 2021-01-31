@@ -41,8 +41,8 @@
         <div class="dctr_lst_hed">
           <p><i class="fa fa-outdent" aria-hidden="true"></i> مرتب سازی براساس :</p>
           <ul>
-            <li class="active"><a>منتخب</a></li>
-            <li><a>بیشترین رضایتمندی</a>
+            <li><a (click)="sort(doctors,0)" id="fav-sort-btn" style="cursor:pointer;">منتخب</a></li>
+            <li><a (click)="sort(doctors,1)" id="user-sort-btn" style="cursor: pointer">بیشترین رضایتمندی</a>
             </li>
             <li><a>زودترین نوبت</a></li>
           </ul>
