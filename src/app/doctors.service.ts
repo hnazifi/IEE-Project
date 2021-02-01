@@ -13,4 +13,8 @@ export class DoctorsService {
   getDoctors() {
     return this.http.get(environment.mainEndPoint + '/doctors');
   }
+
+  getDoctorById(id){
+    return this.http.get(environment.mainEndPoint + '/doctors/' + id)
+  }
 }

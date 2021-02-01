@@ -17,6 +17,7 @@ import {CarouselComponent} from './specialities/carousel/carousel.component';
 import {FooterComponent} from './footer/footer.component';
 import {DoctorsListComponent} from './doctors-list/doctors-list.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { DoctorSingleComponent } from './doctor-single/doctor-single.component';
 
 
 // Angular application routing:
@@ -29,7 +30,9 @@ const routes: Routes = [
   //specialities component
   {path: 'specialities', component: SpecialitiesComponent},
   //doctors page component
-  {path: 'doctors', component: DoctorsListComponent}
+  {path: 'doctors', component: DoctorsListComponent},
+  //doctor page by id
+  {path: 'doctor/:id', component: DoctorSingleComponent}
 ];
 
 @NgModule({
@@ -47,7 +50,8 @@ const routes: Routes = [
     SpecialitiesComponent,
     CarouselComponent,
     FooterComponent,
-    DoctorsListComponent
+    DoctorsListComponent,
+    DoctorSingleComponent
   ],
   imports: [
     BrowserModule,
