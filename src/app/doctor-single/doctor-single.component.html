@@ -49,6 +49,397 @@
           <span class="share_icn"><i class="fa fa-share-alt" aria-hidden="true"></i></span>
         </div>
       </div>
+      <div class="col-md-8">
+        <div class="round_box">
+          <div class="round_head">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-9">
+                  <div class="walk_img">
+                    <i class="fa fa-blind" aria-hidden="true"></i>
+                  </div>
+                  <div class="round_hd_txt">
+                    <h4>رزرو نوبت مراجعه حضوری</h4>
+                    <h6>لطفا روز و ساعت دلخواه برای مراجعه به مطب را انتخاب کنید.</h6>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <button>
+                    مطب چهارراه پونک
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="round_bdy">
+            <ul>
+              <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+              <li class="li_frst_chld">
+                <h6>دوشنبه</h6>
+                <span>1</span>
+                <p>دی</p>
+              </li>
+              <li>
+                <h6>یکشنبه</h6>
+                <span>2</span>
+                <p>دی</p>
+              </li>
+              <li class="li_thrd_chld">
+                <h6>شنبه</h6>
+                <span>3</span>
+                <p>دی</p>
+              </li>
+              <li>
+                <h6>جمعه</h6>
+                <span>4</span>
+                <p>دی</p>
+              </li>
+              <li>
+                <h6>پنجشنبه</h6>
+                <span>5</span>
+                <p>دی</p>
+              </li>
+              <li>
+                <h6>چهارشنبه</h6>
+                <span>6</span>
+                <p>دی</p>
+              </li>
+              <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+            </ul>
+          </div>
+          <div class="round_ftr">
+            <p>
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              ساعت های نوبت دوشنبه 1 دی
+            </p>
+            <span class="gray_bx">17:00</span>
+            <span class="gray_bx">17:10</span>
+            <span class="gray_bx">17:20</span>
+            <span class="orng_bx">17:30</span>
+            <span class="orng_bx">17:40</span>
+            <span class="orng_bx">17:50</span>
+            <span class="gray_bx">18:00</span>
+            <span class="orng_bx">18:10</span>
+            <span class="orng_bx">18:20</span>
+            <span class="orng_bx">18:40</span>
+            <span class="orng_bx">18:50</span>
+          </div>
+        </div>
+
+        <div class="top_cmnt">
+          <div class="grant_bx">
+            <h4>{{data.rate}}</h4>
+            <ul>
+              <li *ngFor="let star of stars"><i class="fa fa-star" aria-hidden="true"></i></li>
+            </ul>
+            <p>از {{data.comments}} نظر </p>
+          </div>
+          <div class="cmnt_side">
+            <span><i class="fa fa-comment-o" aria-hidden="true"></i>  نظر {{data.commenter}}:</span>
+            <p>{{data.comment_text}}</p>
+          </div>
+        </div>
+        <div class="adres_map">
+          <div class="map_header">
+            <button (click)="showTab(0)" id="info_tab" class="actv"><i class="fa fa-map-o" aria-hidden="true"></i>
+              اطلاعات مطب
+            </button>
+            <button (click)="showTab(1)" id="week_tab"><i class="fa fa-calendar-o" aria-hidden="true"></i> روزهای
+              حضور
+            </button>
+          </div>
+          <div *ngIf="isDetail" class="map_bdy">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-5 col-lg-6">
+                  <div class="map_img">
+                    <img src="assets/img/map_image.png" alt="map">
+                  </div>
+                </div>
+                <div class="col-xl-7 col-lg-6">
+                  <div class="adrs_bx">
+                    <h6>آدرس مطب 1 :</h6>
+                    <p>{{data.address}}</p>
+                    <span>تلفن گویا : <a href="#">{{data.phone}}</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="isWeekDays" class="map_bdy">
+            <div class="container">
+              <div class="row round_bdy">
+                <ul class="week_days">
+                  <li>
+                    <h6>شنبه</h6>
+                    <span style="display: flex; justify-content: center">
+                      <i [ngClass]="data.week_days[0] ? 'fa fa-check' : 'fa fa-close'"></i>
+                    </span>
+                  </li>
+                  <li class="li_thrd_chld">
+                    <h6>یک شنبه</h6>
+                    <span style="display: flex; justify-content: center">
+                      <i [ngClass]="data.week_days[1] ? 'fa fa-check' : 'fa fa-close'"></i>
+                    </span>
+                  </li>
+                  <li>
+                    <h6>دوشنبه</h6>
+                    <span style="display: flex; justify-content: center">
+                      <i [ngClass]="data.week_days[2] ? 'fa fa-check' : 'fa fa-close'"></i>
+                    </span>
+                  </li>
+                  <li class="li_thrd_chld">
+                    <h6>سه شنبه</h6>
+                    <span style="display: flex; justify-content: center">
+                      <i [ngClass]="data.week_days[3] ? 'fa fa-check' : 'fa fa-close'"></i>
+                    </span>
+                  </li>
+                  <li>
+                    <h6>چهارشنبه</h6>
+                    <span style="display: flex; justify-content: center">
+                      <i [ngClass]="data.week_days[4] ? 'fa fa-check' : 'fa fa-close'"></i>
+                    </span>
+                  </li>
+                  <li class="li_thrd_chld">
+                    <h6>پنج شنبه</h6>
+                    <span style="display: flex; justify-content: center">
+                      <i [ngClass]="data.week_days[5] ? 'fa fa-check' : 'fa fa-close'"></i>
+                    </span>
+                  </li>
+                  <li>
+                    <h6>جمعه</h6>
+                    <span style="display: flex; justify-content: center">
+                      <i [ngClass]="data.week_days[6] ? 'fa fa-check' : 'fa fa-close'"></i>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="user_cmnts">
+          <div class="user_cmnts_hed">
+            <h5><i class="fa fa-comment-o" aria-hidden="true"></i> نظرات کاربران (تعداد کل نظرات :35) </h5>
+            <p>در این قسمت شما می توانید تجربه مراجعه کاربران دیگر به مطب آقای دکتر جواد رستگارمقدم را بخوانید. </p>
+          </div>
+          <div class="user_cmnts_bdy">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-6 col-12">
+                  <div class="doctr_point">
+                    <h5><i class="fa fa-star-o" aria-hidden="true"></i> امتیاز به پزشک </h5>
+                    <ul>
+                      <li>
+                        <p>5 ستاره</p>
+                        <div class="progres1"></div>
+                        <span>21</span>
+                      </li>
+                      <li>
+                        <p>4 ستاره</p>
+                        <div class="progres2"></div>
+                        <span>11</span>
+                      </li>
+                      <li>
+                        <p>3 ستاره</p>
+                        <div class="progres3"></div>
+                        <span>3</span>
+                      </li>
+                      <li>
+                        <p>2 ستاره</p>
+                        <div class="progres4"></div>
+                        <span>0</span>
+                      </li>
+                      <li>
+                        <p>1 ستاره</p>
+                        <div class="progres5"></div>
+                        <span>0</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-12">
+                  <div class="visit_time">
+                    <h5>
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+                      میانگین زمان انتظار برای ویزیت
+                    </h5>
+                    <p>45 دقیقه </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="dctr_lst_hed">
+                    <p><i class="fa fa-outdent" aria-hidden="true"></i> مرتب سازی براساس :</p>
+                    <ul>
+                      <li><a href="#">جدیدترین</a></li>
+                      <li><a href="#">بیشترین امتیاز</a></li>
+                      <li><a href="#">مفیدترین نظرات</a></li>
+                    </ul>
+                  </div>
+                  <div class="user_cmnt_bx">
+                    <div class="cmnt_bx_hed">
+                      <i class="fa fa-user-o" aria-hidden="true"></i>
+                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+                      <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+												<br>2</span>
+                    </div>
+                    <div class="cmnt_bx_bdy">
+                      <ul>
+                        <li class="cmnt_bdy_li">
+                          <h5>علت مراجعه</h5>
+                          <h5>امتیاز به پزشک</h5>
+                        </li>
+                        <li class="cmnt_bdy_li li_center">
+                          <span>پیگیری روند درمان</span>
+                          <ul class="cmnt_star">
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                          </ul>
+                        </li>
+                        <li class="cmnt_bdy_li3">
+                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
+                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
+                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="user_cmnt_bx">
+                    <div class="cmnt_bx_hed">
+                      <i class="fa fa-user-o" aria-hidden="true"></i>
+                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+                      <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+												<br>2</span>
+                    </div>
+                    <div class="cmnt_bx_bdy">
+                      <ul>
+                        <li class="cmnt_bdy_li">
+                          <h5>علت مراجعه</h5>
+                          <h5>امتیاز به پزشک</h5>
+                        </li>
+                        <li class="cmnt_bdy_li li_center">
+                          <span>پیگیری روند درمان</span>
+                          <ul class="cmnt_star">
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                          </ul>
+                        </li>
+                        <li class="cmnt_bdy_li3">
+                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
+                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
+                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="user_cmnt_bx">
+                    <div class="cmnt_bx_hed">
+                      <i class="fa fa-user-o" aria-hidden="true"></i>
+                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+                      <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+												<br>2</span>
+                    </div>
+                    <div class="cmnt_bx_bdy">
+                      <ul>
+                        <li class="cmnt_bdy_li">
+                          <h5>علت مراجعه</h5>
+                          <h5>امتیاز به پزشک</h5>
+                        </li>
+                        <li class="cmnt_bdy_li li_center">
+                          <span>پیگیری روند درمان</span>
+                          <ul class="cmnt_star">
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                          </ul>
+                        </li>
+                        <li class="cmnt_bdy_li3">
+                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
+                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
+                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="user_cmnt_bx">
+                    <div class="cmnt_bx_hed">
+                      <i class="fa fa-user-o" aria-hidden="true"></i>
+                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+                      <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+												<br>2</span>
+                    </div>
+                    <div class="cmnt_bx_bdy">
+                      <ul>
+                        <li class="cmnt_bdy_li">
+                          <h5>علت مراجعه</h5>
+                          <h5>امتیاز به پزشک</h5>
+                        </li>
+                        <li class="cmnt_bdy_li li_center">
+                          <span>پیگیری روند درمان</span>
+                          <ul class="cmnt_star">
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                          </ul>
+                        </li>
+                        <li class="cmnt_bdy_li3">
+                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
+                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
+                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="user_cmnt_bx">
+                    <div class="cmnt_bx_hed">
+                      <i class="fa fa-user-o" aria-hidden="true"></i>
+                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+                      <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+													<br>2</span>
+                    </div>
+                    <div class="cmnt_bx_bdy">
+                      <ul>
+                        <li class="cmnt_bdy_li">
+                          <h5>علت مراجعه</h5>
+                          <h5>امتیاز به پزشک</h5>
+                        </li>
+                        <li class="cmnt_bdy_li li_center">
+                          <span>پیگیری روند درمان</span>
+                          <ul class="cmnt_star">
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                          </ul>
+                        </li>
+                        <li class="cmnt_bdy_li3">
+                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
+                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
+                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
