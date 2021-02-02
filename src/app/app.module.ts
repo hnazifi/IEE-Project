@@ -18,6 +18,7 @@ import {FooterComponent} from './footer/footer.component';
 import {DoctorsListComponent} from './doctors-list/doctors-list.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { DoctorSingleComponent } from './doctor-single/doctor-single.component';
+import {CrystalLightboxModule} from '@crystalui/angular-lightbox';
 
 
 // Angular application routing:
@@ -53,12 +54,13 @@ const routes: Routes = [
     DoctorsListComponent,
     DoctorSingleComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes),
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule,
+        HttpClientModule,
+        RouterModule.forRoot(routes),
+        CrystalLightboxModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
