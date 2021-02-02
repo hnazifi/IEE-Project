@@ -1,17 +1,19 @@
 <app-top-nav></app-top-nav>
+<!-- breadcrumb -->
 <section class="navbar_sec">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <a routerLink="/">درمانکده</a>
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        <i class="fa fa-chevron-left mr-2 ml-2" aria-hidden="true"></i>
         <a routerLink="/specialities">{{data.spec}}</a>
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        <i class="fa fa-chevron-left mr-2 ml-2" aria-hidden="true"></i>
         <span>{{data.name}}</span>
       </div>
     </div>
   </div>
 </section>
+
 <section class="doctor_sec">
   <div class="container">
     <div class="row">
@@ -127,6 +129,7 @@
           </div>
         </div>
 
+        <!-- comments section -->
         <div class="top_cmnt">
           <div class="grant_bx">
             <h4>{{data.rate}}</h4>
@@ -141,6 +144,7 @@
           </div>
         </div>
         <div class="adres_map">
+          <!-- tab section -->
           <div class="map_header">
             <button (click)="showTab(0)" id="info_tab" class="actv"><i class="fa fa-map-o" aria-hidden="true"></i>
               اطلاعات مطب
@@ -161,7 +165,7 @@
                   <div class="adrs_bx">
                     <h6>آدرس مطب 1 :</h6>
                     <p>{{data.address}}</p>
-                    <span>تلفن گویا : <a href="#">{{data.phone}}</a></span>
+                    <span>تلفن گویا : <a>{{data.phone}}</a></span>
                   </div>
                 </div>
               </div>
@@ -274,9 +278,9 @@
                   <div class="dctr_lst_hed">
                     <p><i class="fa fa-outdent" aria-hidden="true"></i> مرتب سازی براساس :</p>
                     <ul>
-                      <li><a href="#">جدیدترین</a></li>
-                      <li><a href="#">بیشترین امتیاز</a></li>
-                      <li><a href="#">مفیدترین نظرات</a></li>
+                      <li><a>جدیدترین</a></li>
+                      <li><a>بیشترین امتیاز</a></li>
+                      <li><a>مفیدترین نظرات</a></li>
                     </ul>
                   </div>
                   <div class="user_cmnt_bx">
