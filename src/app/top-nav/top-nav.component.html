@@ -87,7 +87,9 @@
     </div>
     <div class="log_btn">
       <!-- route to login component -->
-      <a routerLink="/login">ورود <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+      <a routerLink="/login" *ngIf="!hasToken">ورود <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+      <a routerLink="/profile" *ngIf="hasToken" style="margin-left: 1rem;"> پروفایل </a>
+      <a (click)="signOut()" *ngIf="hasToken">خروج<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
     </div>
   </nav>
 </header>

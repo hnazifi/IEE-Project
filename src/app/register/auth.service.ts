@@ -18,7 +18,15 @@ export class AuthService {
     return this.http.post(environment.endPoint + '/signup', data);
   }
 
+  putUser(data){
+    return this.http.put(environment.endPoint + '/user/update', data)
+  }
+
   postLogin(data) {
     return this.http.post(environment.endPoint + '/login', data);
+  }
+
+  getUsers(){
+    return this.http.get<any>(environment.endPoint + '/all-user')
   }
 }

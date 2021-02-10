@@ -1,0 +1,104 @@
+<div class="log_page">
+  <div class="side_box">
+    <div class="log_img_box">
+      <img src="assets/img/login_logo.svg" alt="logo">
+    </div>
+    <h2>به درمانکده خوش آمدید</h2>
+    <h4>نوبت دهی آنلاین مطب پزشکان</h4>
+  </div>
+  <div class="log_box">
+    <h4>
+      پروفایل
+    </h4>
+    <form class="col-6 m-auto" [formGroup]="registerForm" (ngSubmit)="submit()">
+      <div class="input_lable">
+        <label for="phone_num">نام کاربری</label>
+        <div class="input_box">
+          <input type="text" id="phone_num" formControlName="username">
+        </div>
+      </div>
+      <div class="input_lable mt-3" *ngIf="type == 'doctor'">
+        <label for="phone_num">نام</label>
+        <div class="input_box">
+          <input type="text" id="phone_num" formControlName="name">
+        </div>
+      </div>
+      <div class="input_lable mt-3">
+        <label for="phone_num">تغییر رمز عبور</label>
+        <div class="input_box">
+          <input type="password" id="phone_num" formControlName="password">
+        </div>
+      </div>
+      <div class="input_lable mt-3" *ngIf="type == 'doctor'">
+        <label for="phone_num">نظام پزشکی</label>
+        <div class="input_box">
+          <input type="text" id="phone_num" formControlName="nezam" >
+        </div>
+      </div>
+<!--      <div class="mt-3" *ngIf="type == 'doctor'">-->
+<!--        <label for="phone_num" style="display: block">تخصص</label>-->
+<!--        <mat-form-field appearance="fill" class="text-right col-12">-->
+<!--          <mat-select formControlName="spec">-->
+<!--            <mat-option *ngFor="let spec of specs" [value]="spec.id">-->
+<!--              {{spec.name}}-->
+<!--            </mat-option>-->
+<!--          </mat-select>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+      <div class="mt-3" *ngIf="type == 'doctor'">
+        <label for="phone_num">پرداخت آنلاین</label>
+        <div class="input_box">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="online_pay" type="radio" name="online_pay"
+                   id="inlineRadio1" [value]="true">
+            <label class="form-check-label" for="inlineRadio1">دارد</label>
+
+            <input class="form-check-input" formControlName="online_pay" type="radio" name="online_pay"
+                   id="inlineRadio2" [value]="false">
+            <label class="form-check-label" for="inlineRadio2">ندارد</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="input_lable mt-3" *ngIf="type == 'doctor'">
+        <label for="phone_num">میزان تجربه</label>
+        <div class="input_box">
+          <input type="text" formControlName="experience_years" id="phone_num">
+        </div>
+      </div>
+
+      <div class="input_lable mt-3" *ngIf="type == 'doctor'">
+        <label for="phone_num">آدرس</label>
+        <div class="input_box">
+          <input type="text" formControlName="address" id="phone_num">
+        </div>
+      </div>
+
+      <div class="input_lable mt-3" *ngIf="type == 'doctor'">
+        <label for="phone_num">شماره تلفن</label>
+        <div class="input_box">
+          <input type="text" id="phone_num" formControlName="phone">
+        </div>
+      </div>
+
+<!--      <div class="mt-3" *ngIf="type == 'doctor'">-->
+<!--        <label for="phone_num" style="display: block">روز های حضور در مطب</label>-->
+<!--        <mat-form-field appearance="fill" class="text-right col-12">-->
+<!--          <mat-label>روز های حضور در مطب</mat-label>-->
+<!--          <mat-select multiple [formControl]="weekControl">-->
+<!--            <mat-option *ngFor="let week of weekDays" [value]="week" class="text-right">{{week}}</mat-option>-->
+<!--          </mat-select>-->
+<!--        </mat-form-field>-->
+
+<!--      </div>-->
+
+<!--      <div class="mt-3" *ngIf="type == 'doctor'">-->
+<!--        <label for="file">-->
+<!--          عکس-->
+<!--        </label>-->
+<!--        <input type="file" id="file" #file>-->
+<!--      </div>-->
+      <button type="submit">ثبت اطلاعات جدید<i class="fa fa-angle-double-left" aria-hidden="true"></i></button>
+    </form>
+  </div>
+</div>

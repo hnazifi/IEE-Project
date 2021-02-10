@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-top-nav',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
+  hasToken = false;
+
+  ngOnInit(): void {
+    if (localStorage.getItem('token')) {
+      this.hasToken = true;
+    }
+  }
+
+  signOut() {
+    if (this.hasToken == true) {
+      localStorage.clear();
+      setTimeout(() => {
+        this.hasToken = false;
+      });
+    }
+  }
 }

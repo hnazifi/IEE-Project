@@ -11,10 +11,28 @@ export class DoctorsService {
   }
 
   getDoctors() {
-    return this.http.get(environment.mainEndPoint + '/doctors');
+    return this.http.get(environment.endPoint + '/user');
   }
 
-  getDoctorById(id){
-    return this.http.get(environment.mainEndPoint + '/doctors/' + id)
+  getDoctorById(id) {
+    return this.http.get(environment.endPoint + '/user/' + id);
+  }
+
+  postComment(data) {
+    return this.http.post(environment.endPoint + '/comment/store', data, {
+      observe: 'body'
+    });
+  }
+
+  search(data) {
+    return this.http.get<any[]>(environment.endPoint + '/user/search/' + data);
+  }
+
+  getSpec() {
+    return this.http.get<any[]>(environment.endPoint + '/specialty');
+  }
+
+  getDoctorBySpec(id){
+    return this.http.get<any[]>(environment.endPoint + '/user/specialty/' + id)
   }
 }

@@ -17,14 +17,18 @@ import {CarouselComponent} from './specialities/carousel/carousel.component';
 import {FooterComponent} from './footer/footer.component';
 import {DoctorsListComponent} from './doctors-list/doctors-list.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import { DoctorSingleComponent } from './doctor-single/doctor-single.component';
+import {CommentDialog, DoctorSingleComponent} from './doctor-single/doctor-single.component';
 import {CrystalLightboxModule} from '@crystalui/angular-lightbox';
-import{RegisterComponent} from './register/register.component'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import{BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import{MatOptionModule} from '@angular/material/core'
-import{MatSelectModule} from '@angular/material/select'
-import{MatFormFieldModule} from '@angular/material/form-field'
+import {RegisterComponent} from './register/register.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {ProfileComponent} from './profile/profile.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {JalaliPipe} from './jalali.pipe';
+
 
 // Angular application routing:
 const routes: Routes = [
@@ -39,8 +43,15 @@ const routes: Routes = [
   {path: 'specialities', component: SpecialitiesComponent},
   //doctors page component
   {path: 'doctors', component: DoctorsListComponent},
+
+  {path: 'doctors/query/:text', component: DoctorsListComponent},
+
+  {path: 'doctors/spec/:type/:id', component: DoctorsListComponent},
+
+
   //doctor page by id
-  {path: 'doctor/:id', component: DoctorSingleComponent}
+  {path: 'doctor/:id', component: DoctorSingleComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
@@ -60,20 +71,25 @@ const routes: Routes = [
     FooterComponent,
     DoctorsListComponent,
     DoctorSingleComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    JalaliPipe,
+    CommentDialog,
   ],
-    imports: [
-        BrowserModule,
-        RouterModule,
-        HttpClientModule,
-        RouterModule.forRoot(routes),
-        CrystalLightboxModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        MatOptionModule,
-        ReactiveFormsModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    CrystalLightboxModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDialogModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

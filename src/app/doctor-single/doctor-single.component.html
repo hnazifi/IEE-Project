@@ -6,7 +6,7 @@
       <div class="col-md-12">
         <a routerLink="/">درمانکده</a>
         <i class="fa fa-chevron-left mr-2 ml-2" aria-hidden="true"></i>
-        <a routerLink="/specialities">{{data.spec}}</a>
+        <!--        <a routerLink="/specialities">{{data.spec}}</a>-->
         <i class="fa fa-chevron-left mr-2 ml-2" aria-hidden="true"></i>
         <span>{{data.name}}</span>
       </div>
@@ -24,7 +24,7 @@
           </div>
           <h5>{{data.name}}</h5>
           <h6>{{data.spec}}</h6>
-          <p>شماره نظام پزشکی : {{data.number}}</p>
+          <p>شماره نظام پزشکی : {{data.nezam}}</p>
           <div class="info_box">
             <ul>
               <li>
@@ -49,7 +49,11 @@
           </div>
           <span class="like_heart"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
           <span class="share_icn"><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+          <div class="doctor_comment col-12">
+            <button (click)="addComment()" class="btn btn-success">ثبت نظر</button>
+          </div>
         </div>
+
       </div>
       <div class="col-md-8">
         <div class="round_box">
@@ -301,12 +305,14 @@
                       <li><a>مفیدترین نظرات</a></li>
                     </ul>
                   </div>
-                  <div class="user_cmnt_bx">
+                  <div class="user_cmnt_bx" *ngFor="let comment of comments">
                     <div class="cmnt_bx_hed">
                       <i class="fa fa-user-o" aria-hidden="true"></i>
-                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
+                      <p>نظر حدیقه در تاریخ
+                        {{comment.created_at | jalali}}
+                      </p>
                       <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-												<br>2</span>
+												<br>{{comment.rating}}</span>
                     </div>
                     <div class="cmnt_bx_bdy">
                       <ul>
@@ -325,133 +331,9 @@
                           </ul>
                         </li>
                         <li class="cmnt_bdy_li3">
-                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
-                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
-                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="user_cmnt_bx">
-                    <div class="cmnt_bx_hed">
-                      <i class="fa fa-user-o" aria-hidden="true"></i>
-                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
-                      <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-												<br>2</span>
-                    </div>
-                    <div class="cmnt_bx_bdy">
-                      <ul>
-                        <li class="cmnt_bdy_li">
-                          <h5>علت مراجعه</h5>
-                          <h5>امتیاز به پزشک</h5>
-                        </li>
-                        <li class="cmnt_bdy_li li_center">
-                          <span>پیگیری روند درمان</span>
-                          <ul class="cmnt_star">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          </ul>
-                        </li>
-                        <li class="cmnt_bdy_li3">
-                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
-                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
-                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="user_cmnt_bx">
-                    <div class="cmnt_bx_hed">
-                      <i class="fa fa-user-o" aria-hidden="true"></i>
-                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
-                      <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-												<br>2</span>
-                    </div>
-                    <div class="cmnt_bx_bdy">
-                      <ul>
-                        <li class="cmnt_bdy_li">
-                          <h5>علت مراجعه</h5>
-                          <h5>امتیاز به پزشک</h5>
-                        </li>
-                        <li class="cmnt_bdy_li li_center">
-                          <span>پیگیری روند درمان</span>
-                          <ul class="cmnt_star">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          </ul>
-                        </li>
-                        <li class="cmnt_bdy_li3">
-                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
-                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
-                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="user_cmnt_bx">
-                    <div class="cmnt_bx_hed">
-                      <i class="fa fa-user-o" aria-hidden="true"></i>
-                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
-                      <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-												<br>2</span>
-                    </div>
-                    <div class="cmnt_bx_bdy">
-                      <ul>
-                        <li class="cmnt_bdy_li">
-                          <h5>علت مراجعه</h5>
-                          <h5>امتیاز به پزشک</h5>
-                        </li>
-                        <li class="cmnt_bdy_li li_center">
-                          <span>پیگیری روند درمان</span>
-                          <ul class="cmnt_star">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          </ul>
-                        </li>
-                        <li class="cmnt_bdy_li3">
-                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
-                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
-                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="user_cmnt_bx">
-                    <div class="cmnt_bx_hed">
-                      <i class="fa fa-user-o" aria-hidden="true"></i>
-                      <p>نظر حدیقه در تاریخ 22 آبان 1397</p>
-                      <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-													<br>2</span>
-                    </div>
-                    <div class="cmnt_bx_bdy">
-                      <ul>
-                        <li class="cmnt_bdy_li">
-                          <h5>علت مراجعه</h5>
-                          <h5>امتیاز به پزشک</h5>
-                        </li>
-                        <li class="cmnt_bdy_li li_center">
-                          <span>پیگیری روند درمان</span>
-                          <ul class="cmnt_star">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          </ul>
-                        </li>
-                        <li class="cmnt_bdy_li3">
-                          <p>من که ازش راضیم الان تقریبا شش ماه هستش که تحت نظرشون هستم دو دوره دارو و دو بار آزمایش
-                            برام نوشت که دفعه اول مدفوع خونی پنهان داشتم و دفعه دوم منفی شد .خیلی از حالتهای گوارشیم
-                            بهتر شده خدا رو شکر .در کل دکتر حاذقی هستند </p>
+                          <p>
+                            {{comment.comment}}
+                          </p>
                         </li>
                       </ul>
                     </div>
