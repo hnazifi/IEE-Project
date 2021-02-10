@@ -17,7 +17,14 @@ import {CarouselComponent} from './specialities/carousel/carousel.component';
 import {FooterComponent} from './footer/footer.component';
 import {DoctorsListComponent} from './doctors-list/doctors-list.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import { DoctorSingleComponent } from './doctor-single/doctor-single.component';
+import {DoctorSingleComponent} from './doctor-single/doctor-single.component';
+import {CrystalLightboxModule} from '@crystalui/angular-lightbox';
+import {RegisterComponent} from './register/register.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 
 // Angular application routing:
@@ -27,6 +34,8 @@ const routes: Routes = [
   {path: 'home', component: HomepageComponent},
   //login page component
   {path: 'login', component: LoginComponent},
+  //register
+  {path: 'register/:type', component: RegisterComponent},
   //specialities component
   {path: 'specialities', component: SpecialitiesComponent},
   //doctors page component
@@ -51,13 +60,21 @@ const routes: Routes = [
     CarouselComponent,
     FooterComponent,
     DoctorsListComponent,
-    DoctorSingleComponent
+    DoctorSingleComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    CrystalLightboxModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

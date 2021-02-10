@@ -6,7 +6,8 @@ export const environment = {
   production: false,
 
   //main endpoint variable
-  mainEndPoint: 'https://intense-ravine-40625.herokuapp.com'
+  mainEndPoint: 'https://intense-ravine-40625.herokuapp.com',
+  endPoint: 'http://localhost:8000',
 };
 
 /*
