@@ -14,15 +14,19 @@ export class DoctorsListComponent implements OnInit {
 
   spec: any;
   hasSpec: boolean = false;
+  isSearch: boolean = false;
 
   constructor(public doctorsService: DoctorsService, private renderer: Renderer2, private route: ActivatedRoute) {
     if (route.snapshot.paramMap.get('text')) {
+      this.isSearch = true;
       this.text = route.snapshot.paramMap.get('text');
     }
     if (route.snapshot.paramMap.get('type') == 'spec') {
       this.hasSpec = true;
       this.spec = route.snapshot.paramMap.get('id');
     }
+
+    console.log(this.text);
 
   }
 
@@ -32,7 +36,7 @@ export class DoctorsListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if (this.text == null && this.hasSpec == false) {
+    if (this.text == undefined && this.hasSpec == false && this.isSearch == false) {
       console.log(this.text);
       this.doctorsService.getDoctors().subscribe(res => {
         this.doctors = res;
@@ -51,7 +55,7 @@ export class DoctorsListComponent implements OnInit {
           this.stars.push(Array(this.doctors[i].stars).fill(1).map((i) => i));
         }
       });
-    } else {
+    } if (this.isSearch == true) {
       this.doctorsService.search(this.text).subscribe(res => {
         this.doctors = res;
         this.renderer.addClass(document.getElementById('fav-sort-btn').parentElement, 'active');
