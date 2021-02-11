@@ -1,10 +1,12 @@
 import {Component, Inject, OnInit, Renderer2} from '@angular/core';
 import {DoctorsService} from '../doctors.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {catchError, finalize} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {AuthService} from '../register/auth.service';
+import * as moment from 'jalali-moment';
+
 
 @Component({
   selector: 'app-doctor-single',
@@ -17,7 +19,12 @@ export class DoctorSingleComponent implements OnInit {
 
   data;
   comments = [];
-  stars;
+  days = [];
+  stars = []
+
+  firstTime;
+
+  commenter: any[] = []
 
   constructor(private doctorsService: DoctorsService, private router: ActivatedRoute, private renderer: Renderer2,
               public dialog: MatDialog) {
@@ -26,6 +33,14 @@ export class DoctorSingleComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.reload();
+  }
+
+
+  spec_name: string
+
+
+  reload() {
     this.doctorsService.getDoctorById(this.id).pipe( //get doctor detail by id
       catchError((err) => {
         console.log(err);
@@ -34,14 +49,37 @@ export class DoctorSingleComponent implements OnInit {
       }),
       finalize(() => {
       })).subscribe(res => {
-      console.log(res);
       this.data = res['user'];
+      this.doctorsService.getSpecById(this.data.specialty_id).subscribe(res => {
+        console.log(res);
+        this.spec_name = res[0].name
+        console.log(this.spec_name);
+      })
       this.comments = res['comments'];
+
+      for (let i = 0 ; i < this.comments.length; i++){
+        this.stars.push(Array(this.comments[i].rating).fill(1).map((i) => i));
+
+        this.doctorsService.getUserById(this.comments[i].patient_id).subscribe(res => {
+          this.commenter.push(res)
+        })
+      }
+
+      for (let i in res['days']) {
+        if (res['days'][i] == 1) {
+          this.firstTime = moment(i, 'YYYY:MM:DD').locale('fa').format('YYYY/MM/DD');
+          break;
+        }
+      }
+      for (let i in res['days']) {
+        this.days.push({date: moment(i, 'YYYY:MM:DD').locale('fa').format('YYYY/MM/DD'), valid: res['days'][i]});
+      }
+      console.log(this.days);
+
+      console.log(this.firstTime);
       console.log(this.comments);
       this.data.week_days = JSON.parse(this.data.week_days);
-
-      this.stars = Array(this.data.stars).fill(1).map((i) => i);
-    });
+      });
   }
 
   // tab config
@@ -69,12 +107,14 @@ export class DoctorSingleComponent implements OnInit {
 
   addComment() {
     const dialogRef = this.dialog.open(CommentDialog, {
-      width: '250px',
+      width: '550px',
       data: {id: this.data.id}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      if (result == 'added'){
+        this.reload()
+      }
     });
   }
 }
@@ -89,6 +129,7 @@ export class CommentDialog {
     public dialogRef: MatDialogRef<CommentDialog>,
     private doctorsService: DoctorsService,
     private authService: AuthService,
+    private router: Router,
     @Inject(MAT_DIALOG_DATA) public data
   ) {
     let token = localStorage.getItem('token');
@@ -99,21 +140,27 @@ export class CommentDialog {
     });
   }
 
-  patient: string;
+  patient;
   comment: string = '';
+  rating;
 
   onSubmit(): void {
     console.log(this.comment);
-    this.doctorsService.postComment({
-      comment: this.comment,
-      doctor_id: this.data.id,
-      patient_id: this.patient['id'],
-      rating: 1
+    if (!this.patient){
+      this.dialogRef.close()
+     this.router.navigate(['/login'])
+    }
+    else {
+      this.doctorsService.postComment({
+        comment: this.comment,
+        doctor_id: this.data.id,
+        patient_id: this.patient['id'],
+        rating: this.rating
+      }).subscribe(res => {
+        console.log(res);
+        this.dialogRef.close('added');
+      });
+    }
 
-    }).subscribe(res => {
-      console.log(res);
-      this.dialogRef.close();
-
-    });
   }
 }

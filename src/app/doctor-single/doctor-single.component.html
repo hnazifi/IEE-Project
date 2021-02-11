@@ -6,9 +6,10 @@
       <div class="col-md-12">
         <a routerLink="/">درمانکده</a>
         <i class="fa fa-chevron-left mr-2 ml-2" aria-hidden="true"></i>
-        <!--        <a routerLink="/specialities">{{data.spec}}</a>-->
-        <i class="fa fa-chevron-left mr-2 ml-2" aria-hidden="true"></i>
         <span>{{data.name}}</span>
+        <i class="fa fa-chevron-left mr-2 ml-2" aria-hidden="true"></i>
+        <a routerLink="/specialities">{{spec_name}}</a>
+
       </div>
     </div>
   </div>
@@ -20,7 +21,7 @@
       <div class="col-md-4">
         <div class="doctor_info">
           <div class="dctr_img_bx">
-            <img [src]="data.avatar" alt="img">
+            <img [src]="['http://localhost:8000/' + data.image]" alt="img">
           </div>
           <h5>{{data.name}}</h5>
           <h6>{{data.spec}}</h6>
@@ -35,7 +36,7 @@
               <li>
                 <i class="fa fa-clock-o" aria-hidden="true"></i>
                 <p>اولین نوبت آزاد </p>
-                <span>{{data.first_empty_date}}</span>
+                <span>{{firstTime}}</span>
               </li>
               <li>
                 <i class="fa fa-window-maximize" aria-hidden="true"></i>
@@ -81,35 +82,17 @@
           <div class="round_bdy">
             <ul>
               <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
-              <li class="li_frst_chld">
-                <h6>دوشنبه</h6>
-                <span>1</span>
-                <p>دی</p>
-              </li>
-              <li>
-                <h6>یکشنبه</h6>
-                <span>2</span>
-                <p>دی</p>
-              </li>
-              <li class="li_thrd_chld">
-                <h6>شنبه</h6>
-                <span>3</span>
-                <p>دی</p>
-              </li>
-              <li>
-                <h6>جمعه</h6>
-                <span>4</span>
-                <p>دی</p>
-              </li>
-              <li>
-                <h6>پنجشنبه</h6>
-                <span>5</span>
-                <p>دی</p>
-              </li>
-              <li>
-                <h6>چهارشنبه</h6>
-                <span>6</span>
-                <p>دی</p>
+              <li class="li_frst_chld" *ngFor="let day of days">
+                <p
+                  style="display: flex;height: 50%;justify-content: center;align-items: center; font-size: 14px; margin-bottom: 0 !important;">
+                  {{day.date}}
+                </p>
+                <p *ngIf="day.valid == 1" style="font-size: 14px">
+                  خالی
+                </p>
+                <p *ngIf="day.valid == 0" style="font-size: 14px">
+                  پر
+                </p>
               </li>
               <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
             </ul>
@@ -133,20 +116,7 @@
           </div>
         </div>
 
-        <!-- comments section -->
-        <div class="top_cmnt">
-          <div class="grant_bx">
-            <h4>{{data.rate}}</h4>
-            <ul>
-              <li *ngFor="let star of stars"><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <p>از {{data.comments}} نظر </p>
-          </div>
-          <div class="cmnt_side">
-            <span><i class="fa fa-comment-o" aria-hidden="true"></i>  نظر {{data.commenter}}:</span>
-            <p>{{data.comment_text}}</p>
-          </div>
-        </div>
+
         <div class="adres_map">
           <!-- tab section -->
           <div class="map_header">
@@ -247,8 +217,9 @@
 
         <div class="user_cmnts">
           <div class="user_cmnts_hed">
-            <h5><i class="fa fa-comment-o" aria-hidden="true"></i> نظرات کاربران (تعداد کل نظرات :35) </h5>
-            <p>در این قسمت شما می توانید تجربه مراجعه کاربران دیگر به مطب آقای دکتر جواد رستگارمقدم را بخوانید. </p>
+            <h5><i class="fa fa-comment-o" aria-hidden="true"></i> نظرات کاربران (تعداد کل نظرات :{{comments.length}})
+            </h5>
+            <p>در این قسمت شما می توانید تجربه مراجعه کاربران دیگر به مطب {{data.name}} را بخوانید. </p>
           </div>
           <div class="user_cmnts_bdy">
             <div class="container">
@@ -295,6 +266,7 @@
                   </div>
                 </div>
               </div>
+              <!-- comments section -->
               <div class="row">
                 <div class="col-md-12">
                   <div class="dctr_lst_hed">
@@ -305,10 +277,10 @@
                       <li><a>مفیدترین نظرات</a></li>
                     </ul>
                   </div>
-                  <div class="user_cmnt_bx" *ngFor="let comment of comments">
+                  <div class="user_cmnt_bx" *ngFor="let comment of comments; let i = index">
                     <div class="cmnt_bx_hed">
                       <i class="fa fa-user-o" aria-hidden="true"></i>
-                      <p>نظر حدیقه در تاریخ
+                      <p *ngIf="commenter">نظر {{commenter[i].username}} در تاریخ
                         {{comment.created_at | jalali}}
                       </p>
                       <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
@@ -321,13 +293,9 @@
                           <h5>امتیاز به پزشک</h5>
                         </li>
                         <li class="cmnt_bdy_li li_center">
-                          <span>پیگیری روند درمان</span>
+                          <!--                          <span>پیگیری روند درمان</span>-->
                           <ul class="cmnt_star">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li *ngFor="let a of stars[i]"><i class="fa fa-star" aria-hidden="true"></i></li>
                           </ul>
                         </li>
                         <li class="cmnt_bdy_li3">

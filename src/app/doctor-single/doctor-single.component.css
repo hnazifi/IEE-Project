@@ -622,10 +622,10 @@
   color: #1780DF;
   font-size: 15px;
 }
-.cmnt_star li:last-child i{
-  color: #cdcdcd;
-  border-color: #ededed;
-}
+/*.cmnt_star li:last-child i{*/
+/*  color: #cdcdcd;*/
+/*  border-color: #ededed;*/
+/*}*/
 .cmnt_bdy_li3 p{
   font-size: 14px;
   color: #6e7794;

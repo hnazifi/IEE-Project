@@ -28,6 +28,7 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {ProfileComponent} from './profile/profile.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {JalaliPipe} from './jalali.pipe';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 // Angular application routing:
@@ -85,6 +86,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatSliderModule,
     MatOptionModule,
     ReactiveFormsModule,
     FormsModule,

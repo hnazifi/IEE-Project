@@ -11,7 +11,7 @@ export class DoctorsService {
   }
 
   getDoctors() {
-    return this.http.get(environment.endPoint + '/user');
+    return this.http.get<any[]>(environment.endPoint + '/user');
   }
 
   getDoctorById(id) {
@@ -34,5 +34,13 @@ export class DoctorsService {
 
   getDoctorBySpec(id){
     return this.http.get<any[]>(environment.endPoint + '/user/specialty/' + id)
+  }
+
+  getUserById(id){
+    return this.http.get(environment.endPoint + '/user/' + id)
+  }
+
+  getSpecById(id){
+    return this.http.get(environment.endPoint + '/specialty/' + id)
   }
 }

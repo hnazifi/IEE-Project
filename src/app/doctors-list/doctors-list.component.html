@@ -42,21 +42,21 @@
           <p><i class="fa fa-outdent" aria-hidden="true"></i> مرتب سازی براساس :</p>
           <ul>
             <li><a (click)="sort(doctors,0)" id="fav-sort-btn" style="cursor:pointer;">منتخب</a></li>
-            <li><a (click)="sort(doctors,1)" id="user-sort-btn" style="cursor: pointer">بیشترین رضایتمندی</a>
+            <li><a (click)="sort(firstTime,1)" id="user-sort-btn" style="cursor: pointer">زودترین نوبت</a>
             </li>
-            <li><a>زودترین نوبت</a></li>
+            <li><a>بیشترین رضایتمندی</a></li>
           </ul>
         </div>
         <div class="dctr_lst_bx">
           <ul class="dctr_lst">
-            <li class="dctr_lst_li" *ngFor="let doctor of doctors; let i = index">
+            <li class="dctr_lst_li" *ngFor="let doctor of doctors; let i = index;">
               <div class="dctr_card">
                 <a [routerLink]="['/doctor', doctor['id']]">
                   <div class="container">
                     <div class="row">
                       <div class="col-md-7">
                         <div class="dctr_img_bx">
-                          <img [src]="['http://localhost:8000/storage/app/' + doctor['image']]" alt="img">
+                          <img [src]="['http://localhost:8000/' + doctor['image']]" alt="img">
                         </div>
                         <div class="dctr_expln_bx">
                           <h5>
@@ -68,7 +68,7 @@
                           <ul class="star_list">
                             <li><i class="fa fa-star" aria-hidden="true"></i></li>
                           </ul>
-                          <span>({{doctor['comments']}} نظر )</span>
+                          <span>({{comments[i]}} نظر )</span>
                           <p>
                             {{doctor['comment_text']}}
                           </p>
@@ -97,7 +97,7 @@
                         </div>
                         <div class="nobat">
                           اولین نوبت خالی
-                          {{doctor['first_empty_date']}}
+                          {{firstTime[i]}}
                         </div>
                       </div>
                     </div>
