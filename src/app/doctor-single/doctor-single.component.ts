@@ -41,6 +41,7 @@ export class DoctorSingleComponent implements OnInit {
 
 
   reload() {
+    this.days = []
     this.doctorsService.getDoctorById(this.id).pipe( //get doctor detail by id
       catchError((err) => {
         console.log(err);
@@ -72,12 +73,8 @@ export class DoctorSingleComponent implements OnInit {
         }
       }
       for (let i in res['days']) {
-        this.days.push({date: moment(i, 'YYYY:MM:DD').locale('fa').format('YYYY/MM/DD'), valid: res['days'][i]});
+        this.days.push({date: i, valid: res['days'][i]});
       }
-      console.log(this.days);
-
-      console.log(this.firstTime);
-      console.log(this.comments);
       this.data.week_days = JSON.parse(this.data.week_days);
       });
   }
@@ -116,6 +113,14 @@ export class DoctorSingleComponent implements OnInit {
         this.reload()
       }
     });
+  }
+
+  onReserve(date) {
+    console.log(date);
+    console.log(moment.from(date, 'fa', 'YYYY/MM/DD').format('YYYY/MM/DD'));
+    this.doctorsService.postReserve(this.id,'3',date).subscribe(res => {
+      console.log(res);
+    })
   }
 }
 

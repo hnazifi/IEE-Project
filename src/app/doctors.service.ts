@@ -32,15 +32,19 @@ export class DoctorsService {
     return this.http.get<any[]>(environment.endPoint + '/specialty');
   }
 
-  getDoctorBySpec(id){
-    return this.http.get<any[]>(environment.endPoint + '/user/specialty/' + id)
+  getDoctorBySpec(id) {
+    return this.http.get<any[]>(environment.endPoint + '/user/specialty/' + id);
   }
 
-  getUserById(id){
-    return this.http.get(environment.endPoint + '/user/' + id)
+  getUserById(id) {
+    return this.http.get(environment.endPoint + '/user/' + id);
   }
 
-  getSpecById(id){
-    return this.http.get(environment.endPoint + '/specialty/' + id)
+  getSpecById(id) {
+    return this.http.get(environment.endPoint + '/specialty/' + id);
+  }
+
+  postReserve(doctor, patient, date) {
+    return this.http.post(environment.endPoint + '/reserve/' + doctor + '/' + patient + '/' + date, {});
   }
 }

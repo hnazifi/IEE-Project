@@ -36,7 +36,7 @@
               <li>
                 <i class="fa fa-clock-o" aria-hidden="true"></i>
                 <p>اولین نوبت آزاد </p>
-                <span>{{firstTime}}</span>
+                <span>{{firstTime | jalaliDate}}</span>
               </li>
               <li>
                 <i class="fa fa-window-maximize" aria-hidden="true"></i>
@@ -83,16 +83,18 @@
             <ul>
               <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
               <li class="li_frst_chld" *ngFor="let day of days">
-                <p
-                  style="display: flex;height: 50%;justify-content: center;align-items: center; font-size: 14px; margin-bottom: 0 !important;">
-                  {{day.date}}
-                </p>
-                <p *ngIf="day.valid == 1" style="font-size: 14px">
-                  خالی
-                </p>
-                <p *ngIf="day.valid == 0" style="font-size: 14px">
-                  پر
-                </p>
+                <a (click)="onReserve(day.date)">
+                  <p
+                    style="display: flex;height: 50%;justify-content: center;align-items: center; font-size: 14px; margin-bottom: 0 !important;">
+                    {{day.date | jalaliDate}}
+                  </p>
+                  <p *ngIf="day.valid == 1" style="font-size: 14px">
+                    خالی
+                  </p>
+                  <p *ngIf="day.valid == 0" style="font-size: 14px">
+                    پر
+                  </p>
+                </a>
               </li>
               <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
             </ul>

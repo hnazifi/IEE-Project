@@ -29,6 +29,7 @@ import {ProfileComponent} from './profile/profile.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {JalaliPipe} from './jalali.pipe';
 import {MatSliderModule} from '@angular/material/slider';
+import { JalaliDatePipe } from './jalali-date.pipe';
 
 
 // Angular application routing:
@@ -76,6 +77,7 @@ const routes: Routes = [
     ProfileComponent,
     JalaliPipe,
     CommentDialog,
+    JalaliDatePipe,
   ],
   imports: [
     BrowserModule,
